@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-content">
+
+    <section id="text-box">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable.</p>
+    </section>
+
+    <section id="form-box">
+      <div class="trial-topbox">
+        <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+      </div>
+      <div class="form-container">
+        <form action="" id="my-form">
+          <label for="name">
+            <input type="text" id="name" name="firstName" placeholder="First Name">
+          <p class="error-field">First Name cannot be empty</p>
+          </label>
+          
+
+          <label for="last-name">
+            <input type="text" id="last-name" name="lastName" placeholder="Last Name">
+            <p class="error-field">Last Name cannot be empty</p>
+          </label>
+          
+
+          <label for="email">
+            <input type="email" id="email" name="email" placeholder="Email Address">
+            <p class="error-field">Looks like this is not an email</p>
+          </label>
+
+          <label for="password">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <p class="error-field">Password cannot be empty</p>
+          </label>
+
+          <button type="sumbit" name="submit" class="form-button">Claim your free trial </button>
+        <p>By clicking the button, you are agreeing to our <a href="" class="terms-conditions-link">Terms and Services</a></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+  <script src="java.js"></script>
+</body>
+</html>

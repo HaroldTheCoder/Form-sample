@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px
+}
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+#main-content{
+    background: linear-gradient(hsla(0, 100%, 50%, 0.495), hsla(0, 100%, 50%, 0.495)), url(images/bg-intro-desktop.png) no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    padding: 5em 10em 5em 10em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row;
+}
+#text-box, #form-box, .form-button {
+    color: #fff;
+}
+#text-box {
+    width: 95%;
+    margin-right: 10%;
+}
+h1 {
+    font-size: 3em;
+}
+#form-box {
+    width: 103%;
+    display: grid;
+    grid-template-areas: 'top'
+    'bottom';
+    gap: 2em;
+}
+.trial-topbox {
+    grid-area: top;
+    background-color: hsl(248, 32%, 49%);
+    padding: 1.50em;
+    text-align: center;
+    border-radius: 0.35em;
+    box-shadow: 0px 9px 2px rgba(189, 84, 84, 0.568);
+}
+span {
+    font-weight: 600;
+}
+#form-container {
+    grid-area: bottom;
+}
+#my-form {
+    height: auto;
+    padding: 3em;
+    background-color: #fff;
+    border-radius: 0.40em;
+    box-shadow: 0px 11px 2px rgba(189, 84, 84, 0.568);
+}
+label {
+    display: block;
+    margin-bottom: 2em;
+}
+input {
+    padding: 1em;
+    width: 100%;
+    border: 2px solid rgb(231, 231, 231);
+    border-radius: 0.30em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+input:focus {
+    border-color: hsl(246, 25%, 77%);
+    outline: transparent;
+}
+input:valid {
+    background-color: white;
+}
+.invalid {
+    border-color: hsl(0, 100%, 50%);
+    background: url(images/icon-error.svg) no-repeat;
+    background-position: center right 5%;
+}
+.form-button {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    background-color: hsl(154, 59%, 51%);
+    border: transparent;
+    border-bottom: 3px solid hsl(154, 58%, 40%);
+    border-radius: 0.30em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.form-button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+#my-form p {
+    margin-top: 3%;
+    font-size: 0.80em;
+    color: rgb(201, 201, 201);
+}
+#my-form a {
+    font-size: 1em;
+    font-weight: 600;
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+}
+.error-field {
+    text-align: right;
+    display: none;
+    font-style: oblique;
+}
+.error-active {
+    display: block;
+}
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 1.80em;
+        margin-bottom: 8%;
+    }
+    #main-content {
+        flex-flow: column;
+        height: auto;
+        padding: 3em 2em 3em 2em;
+        text-align: center;
+    }
+    #text-box, #form-box {
+        width: 100%;
+        margin: 10% auto;
+    }
+    .trial-topbox {
+        font-size: 3em;
+        padding: 0.50em 1em 0.50em 1em;
+    }
+    #my-form {
+        padding: 2em;
+    }
+    .attribution {
+        font-size: 0.80em;
+        text-align: center;
+    }
+    .attribution a{
+        font-size: 0.80em;
+    }
+}
