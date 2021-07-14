@@ -73,8 +73,9 @@ input:focus {
     border-color: hsl(246, 25%, 77%);
     outline: transparent;
 }
-input:valid {
-    background-color: white;
+.valid {
+    border-color: hsl(246, 25%, 77%);
+    outline: transparent;
 }
 .invalid {
     border-color: hsl(0, 100%, 50%);
@@ -115,7 +116,45 @@ input:valid {
 .error-active {
     display: block;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 374px) {
+    h1 {
+        font-size: 1.50em;
+        margin-bottom: 8%;
+    }
+    #main-content {
+        flex-flow: column;
+        height: auto;
+        padding: 3em 2em 3em 2em;
+        text-align: center;
+        font-size: 1em;
+    }
+    #text-box, #form-box {
+        width: 100%;
+        margin: 10% auto;
+    }
+    .trial-topbox {
+        font-size: 1.50em;
+        padding: 0.50em 1em 0.50em 1em;
+    }
+    #my-form {
+        padding: 1em;
+    }
+    input {
+        padding: 0.80em;
+    }
+    .form-button {
+        padding: 0.80em;
+    }
+    .attribution {
+        font-size: 0.90em;
+        text-align: center;
+    }
+    .attribution a{
+        font-size: 0.80em;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 414px) {
     h1 {
         font-size: 1.80em;
         margin-bottom: 8%;
@@ -125,6 +164,69 @@ input:valid {
         height: auto;
         padding: 3em 2em 3em 2em;
         text-align: center;
+    }
+    #text-box, #form-box {
+        width: 100%;
+        margin: 10% auto;
+    }
+    .trial-topbox {
+        font-size: 3em;
+        padding: 0.50em 1em 0.50em 1em;
+    }
+    #my-form {
+        padding: 2em;
+    }
+    .attribution {
+        font-size: 0.80em;
+        text-align: center;
+    }
+    input {
+        padding: 0.90em;
+    }
+    .attribution a{
+        font-size: 0.80em;
+    }
+}
+@media screen and (min-width: 415px) and (max-width: 570px) {
+    h1 {
+        font-size: 1.80em;
+        margin-bottom: 8%;
+    }
+    #main-content {
+        flex-flow: column;
+        height: auto;
+        padding: 3em 2em 3em 2em;
+        text-align: center;
+    }
+    #text-box, #form-box {
+        width: 100%;
+        margin: 10% auto;
+    }
+    .trial-topbox {
+        font-size: 3em;
+        padding: 0.50em 1em 0.50em 1em;
+    }
+    #my-form {
+        padding: 2em;
+    }
+    .attribution {
+        font-size: 0.80em;
+        text-align: center;
+    }
+    .attribution a{
+        font-size: 0.80em;
+    }
+}
+@media screen and (min-width: 571px) and (max-width: 800px) {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 8%;
+    }
+    #main-content {
+        flex-flow: row;
+        height: auto;
+        padding: 3em 2em 3em 2em;
+        text-align: left;
     }
     #text-box, #form-box {
         width: 100%;
