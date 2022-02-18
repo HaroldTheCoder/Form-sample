@@ -1,56 +1,63 @@
-
-const submitButton = document.querySelector(".form-button");
+// Input variables
+const myForm = document.querySelector('#my-form');
+const firstName = document.querySelector("#name");
+const lastName = document.querySelector("#last-name");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
 const errorField = document.querySelectorAll(".error-field");
-//Const Validation with built in function
-const validate = (e) => {
-	e.preventDefault(); // Prevents default behavior on reload page on submit
+const pattern = '[a-z0-9]+@[a-z]+\.[a-z]{2,3}';
 
-    // Declare inputs variables
-	const firstName = document.getElementById("name");
-	const lastName = document.getElementById("last-name");
-	const email = document.getElementById("email");
-	const passwordD = document.getElementById("password");
 
-    // Creates conditions for error message display
-	if (firstName.value < 1) { // Condition -> If input value is less than 1 character error message display
-		errorField[0].classList.toggle("error-active"); // Array Index of each error field with same class name
-		errorField[0].style.color = "red";
-		firstName.classList.toggle("invalid");
-	}
+// Form validation check event on submit if conditions are not met
+myForm.addEventListener('submit', (e)=> {
 
-	if (lastName.value < 1) { 
-		errorField[1].classList.toggle("error-active");
-		errorField[1].style.color = "red";
-		lastName.classList.toggle("invalid");
-	}
-
-	if (email.value < 1) {
-		errorField[2].classList.toggle("error-active");
-		errorField[2].style.color = "red";
-		email.classList.toggle("invalid");
-	}
-
-	if (password.value < 1) {
-		errorField[3].classList.toggle("error-active");
-		errorField[3].style.color = "red";
-		passwordD.classList.toggle("invalid");
+	// First name validation check
+	if(firstName.value.length <= 1) { // Condition -> If input value is less than 1 character error message display
+		e.preventDefault()
+		errorField[0].style.display = "block"; // errorField[] Array Index of each error field with same class name
+		errorField[0].style.color = "hsl(0, 100%, 50%)";
+		errorField[0].innerHTML = "First Name cannot be empty";
+		firstName.classList.toggle('invalid');
 	} else {
-		inputValid.classList.remove("invalid");
-		errorField.forEach((f) => {
-			f.classList.remove("error-active");
-			f.style.color = "black";
-		});
-		return true;
+		errorField[0].style.display = "none";
+		firstName.classList.remove('invalid');
 	}
-	return false;
-};
-function valid(){
-	const inputValid = document.querySelectorAll('input');
-	if(inputValid > 1) {
-		inputValid.forEach((v) => { 
-			v.classList.toggle('valid');
-		});
+
+	// Last name validation check
+	if(lastName.value.length <= 1) {
+		e.preventDefault()
+		errorField[1].style.display = "block";
+		errorField[1].style.color = "hsl(0, 100%, 50%)";
+		errorField[1].innerHTML = "Last Name cannot be empty";
+		lastName.classList.toggle('invalid');
+	} else {
+		errorField[1].style.display = "none";
+		lastName.classList.remove('invalid');
 	}
-}
-input.addEventListener('input', valid());
-submitButton.addEventListener("click", validate);
+
+	// Email validation check
+	if(email.value.match(pattern)) { // Condition -> If email input value matches email pattern, email is valid. Else error message will display
+		errorField[2].style.display = "none";
+		email.classList.remove('invalid');
+		
+	}  else {
+		e.preventDefault()
+		errorField[2].style.display = "block";
+		errorField[2].style.color = "hsl(0, 100%, 50%)";
+		errorField[2].innerHTML = "Looks like this is not an email";
+		email.classList.toggle('invalid');
+	}
+
+	// password validation check
+	if(password.value.length <= 1) {
+		e.preventDefault()
+		errorField[3].style.display = "block";
+		errorField[3].style.color = "hsl(0, 100%, 50%)";
+		errorField[3].innerHTML = "Password cannot be empty";
+		password.classList.toggle('invalid');
+	} else {
+		errorField[3].style.display = "none";
+		password.classList.remove('invalid');
+	}
+});
+
